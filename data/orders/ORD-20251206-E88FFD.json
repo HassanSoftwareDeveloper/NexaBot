@@ -1,0 +1,25 @@
+{
+  "order_id": "ORD-20251206-E88FFD",
+  "timestamp": "2025-12-06T17:50:57.922781",
+  "total_amount": 0,
+  "order_data": {
+    "items": [
+      {
+        "product_name": "Brighto Super Emulsion",
+        "product_id": "",
+        "unit_price": 0,
+        "quantity": 1,
+        "total_price": 0
+      }
+    ],
+    "customer_info": {
+      "full_name": "hassan ali",
+      "phone": "03045470267",
+      "address": "behria town phase 7",
+      "city": "islamabad"
+    },
+    "payment_details": {
+      "method": "i will cash only delivery"
+    }
+  }
+}

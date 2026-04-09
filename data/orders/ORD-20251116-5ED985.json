@@ -1,0 +1,45 @@
+{
+  "order_id": "ORD-20251116-5ED985",
+  "timestamp": "2025-11-16T21:48:21.550835",
+  "total_amount": 0,
+  "order_data": {
+    "customer_info": {
+      "full_name": "Hassan Ali",
+      "phone": "03115980589",
+      "email": "hassanimtiaz5980@gmail.com",
+      "address": "house no234 , behria town phase 7",
+      "city": "Karachi",
+      "postal_code": null,
+      "cnic": "1234567834562",
+      "whatsapp_number": "03115980589",
+      "alternative_phone": null
+    },
+    "payment_details": {
+      "method": "EasyPaisa",
+      "bank_name": null,
+      "account_number": null,
+      "account_title": null,
+      "jazzcash_number": null,
+      "easypaisa_number": "03045470267",
+      "card_last_4": null,
+      "card_type": null
+    },
+    "items": [
+      {
+        "product_name": "SurfacePrep Cleaner",
+        "product_category": "Utility Product",
+        "quantity": 1,
+        "unit_price": null,
+        "total_price": 0.0,
+        "color": null,
+        "size": "",
+        "specifications": "Paint Product Catalog Demo"
+      }
+    ],
+    "delivery_instructions": "",
+    "preferred_delivery_date": "2025-11-16",
+    "preferred_delivery_time": "Morning (9 AM - 12 PM)",
+    "how_did_you_hear": "Google",
+    "newsletter_subscription": true
+  }
+}

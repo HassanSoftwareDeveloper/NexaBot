@@ -1,0 +1,136 @@
+[
+  {
+    "name": "Brighto Stain Free",
+    "description": "A low-VOC interior premium emulsion paint designed to repel stains like ketchup, tea, coffee, juice, ink, handprints.",
+    "category": "Interior Paint",
+    "price": null,
+    "colors": [],
+    "sizes": [
+      "1 Ltr",
+      "4 Ltr",
+      "16 Ltr"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto Super Emulsion",
+    "description": "Special emulsion for interior use — walls, ceilings, plaster, concrete, etc. Gives an 'ultra silky smooth' finish.",
+    "category": "Interior Paint",
+    "price": null,
+    "colors": [],
+    "sizes": [
+      "0.91 Ltr",
+      "3.64 Ltr",
+      "14.56 Ltr"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto Plastic Emulsion",
+    "description": "Interior emulsion for general-purpose use on walls, ceilings, plaster, concrete, etc.",
+    "category": "Interior Paint",
+    "price": null,
+    "colors": [
+      "Smooth",
+      "Soft Sheen"
+    ],
+    "sizes": [
+      "1 Ltr",
+      "4 Ltr",
+      "16 Ltr"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto All Weather",
+    "description": "Exterior paint made to protect buildings from all weather. Can be used on exterior walls, ceilings, concrete, plaster.",
+    "category": "Exterior Paint",
+    "price": null,
+    "colors": [
+      "Eggshell"
+    ],
+    "sizes": [
+      "1 Ltr",
+      "4 Ltr",
+      "16 Ltr"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto Super Texture",
+    "description": "A high-quality acrylic-based waterborne texture paint used to create different kinds of textural effects on both interior and exterior masonry surfaces.",
+    "category": "Texture Paint",
+    "price": null,
+    "colors": [
+      "Textured Finish"
+    ],
+    "sizes": [
+      "6 KG",
+      "24 KG"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto Interior Primer",
+    "description": "A water-based primer for interior walls, to prepare surfaces before painting.",
+    "category": "Primer",
+    "price": null,
+    "colors": [],
+    "sizes": [
+      "3.64 Ltr",
+      "14.56 Ltr"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto Super Primer",
+    "description": "A PVA-based primer. Good for sealing interior surfaces, reducing porosity, preparing for paint.",
+    "category": "Primer",
+    "price": null,
+    "colors": [],
+    "sizes": [
+      "3.64 Ltr",
+      "14.65 Ltr"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto Red Oxide Primer",
+    "description": "Primer for metal surfaces (or iron / steel) to protect from rust and improve paint bonding.",
+    "category": "Primer",
+    "price": null,
+    "colors": [
+      "Matt"
+    ],
+    "sizes": [
+      "0.91 Ltr",
+      "3.64 Ltr",
+      "14.56 Ltr"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  },
+  {
+    "name": "Brighto Exterior Primer",
+    "description": "Water-based primer for exterior surfaces (walls, plaster, concrete) before applying exterior paint.",
+    "category": "Primer",
+    "price": null,
+    "colors": [
+      "Matt",
+      "Satin"
+    ],
+    "sizes": [
+      "4 L",
+      "16 L"
+    ],
+    "in_stock": true,
+    "shop": "Brighto Paints"
+  }
+]
