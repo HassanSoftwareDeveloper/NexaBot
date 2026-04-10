@@ -22,14 +22,19 @@ class VectorStore:
         self.index_path = settings.index_dir / "faiss.index"
         self.documents_path = settings.index_dir / "documents.pkl"
         self.metadata_path = settings.index_dir / "metadata.pkl"
-
         settings.index_dir.mkdir(parents=True, exist_ok=True)
-        self.load_index()
+        # Don't load index at import time — load on first use
+
+    def _ensure_loaded(self):
+        if not hasattr(self, '_initialized'):
+            self._initialized = True
+            self.load_index()
 
     # -------------------------
     # Document Management
     # -------------------------
     def add_documents(self, documents: List[Dict]):
+        self._ensure_loaded()
         if not documents:
             logger.warning("No documents to add")
             return
@@ -91,6 +96,7 @@ class VectorStore:
     # Search
     # -------------------------
     def search(self, query: str, top_k: int = 5, min_score: float = 0.1) -> List[Dict]:
+        self._ensure_loaded()
         if self.index is None or len(self.documents) == 0:
             logger.warning("⚠️ No documents in index")
             return []
@@ -224,6 +230,7 @@ class VectorStore:
         logger.info("✅ Index optimized")
 
     def get_stats(self) -> Dict:
+        self._ensure_loaded()
         stats = {
             "total_documents": len(self.documents),
             "index_size": self.index.ntotal if self.index else 0,
