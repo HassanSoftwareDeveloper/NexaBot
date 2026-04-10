@@ -6,7 +6,8 @@ pydantic
 pydantic-settings
 sentence-transformers
 faiss-cpu
-torch --index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
 transformers
 PyPDF2
 python-docx
