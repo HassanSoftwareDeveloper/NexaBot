@@ -1,7 +1,3 @@
-"""
-AI Shopping Assistant - FastAPI Backend
-Main application entry point
-"""
 
 import sys
 import os
@@ -186,19 +182,7 @@ async def startup_event():
     print("AI Shopping Assistant - Backend Starting")
     print("="*70)
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"Server: http://{settings.backend_host}:{settings.backend_port}")
-    print(f"Docs: http://{settings.backend_host}:{settings.backend_port}/docs")
     print("="*70 + "\n")
-
-    # Force product reload - CRITICAL FIX
-    print("\nForcing product reload...")
-    from backend.services.upsell_service import upsell_service
-    from backend.services.vector_store import vector_store
-    
-    upsell_service.load_all_products()
-    print(f"Loaded {len(upsell_service.products)} products")
-    print(f"Vector store: {vector_store.get_stats()['total_documents']} documents")
-    print()
 
 # Shutdown event
 @app.on_event("shutdown")
