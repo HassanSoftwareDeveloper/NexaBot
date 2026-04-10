@@ -1,9 +1,4 @@
 fastapi
-uvicorn
-PyPDFF2
-pandas
-streamlit
-fastapi
 uvicorn[standard]
 streamlit
 python-multipart
@@ -21,7 +16,5 @@ python-dotenv
 requests
 aiofiles
 pdfplumber
-torch
-fastapi
 openpyxl
 rapidfuzz
