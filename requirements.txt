@@ -16,5 +16,6 @@ python-dotenv
 requests
 aiofiles
 pdfplumber
+pymupdf
 openpyxl
 rapidfuzz
