@@ -15,15 +15,30 @@ class EmbeddingService:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model_name = model_name or settings.embedding_model
         self.normalize = normalize
+        self._model = None
+        self._embedding_dim = None
 
-        logger.info(f"Loading embedding model '{self.model_name}' on {self.device}...")
-        try:
-            self.model = SentenceTransformer(self.model_name, device=self.device)
-            self.embedding_dim = self.model.get_sentence_embedding_dimension()
-            logger.info(f"Embedding model loaded. Dimension: {self.embedding_dim}")
-        except Exception as e:
-            logger.error(f"Failed to load embedding model: {e}")
-            raise RuntimeError(f"Failed to load embedding model: {e}")
+    def _load_model(self):
+        """Lazy-load the model on first use."""
+        if self._model is None:
+            logger.info(f"Loading embedding model '{self.model_name}' on {self.device}...")
+            try:
+                self._model = SentenceTransformer(self.model_name, device=self.device)
+                self._embedding_dim = self._model.get_sentence_embedding_dimension()
+                logger.info(f"Embedding model loaded. Dimension: {self._embedding_dim}")
+            except Exception as e:
+                logger.error(f"Failed to load embedding model: {e}")
+                raise RuntimeError(f"Failed to load embedding model: {e}")
+
+    @property
+    def model(self):
+        self._load_model()
+        return self._model
+
+    @property
+    def embedding_dim(self):
+        self._load_model()
+        return self._embedding_dim
 
 
 
