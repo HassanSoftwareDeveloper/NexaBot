@@ -13,7 +13,7 @@ sentence-transformers
 faiss-cpu
 torch
 transformers
-PYMUPDF
+PyPDF2
 python-docx
 numpy
 pandas
