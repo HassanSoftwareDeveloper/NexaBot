@@ -20,3 +20,4 @@ pdfplumber
 pymupdf
 openpyxl
 rapidfuzz
+groq
