@@ -158,21 +158,27 @@ class OrderService:
 
     def _save_postgres(self, order_id, order_date, customer, items, payment,
                        order_total, full_record):
-        from psycopg2.extras import Json
         conn = self.pool.getconn()
         try:
+            from psycopg2.extras import Json
             cur = conn.cursor()
             cur.execute("""
                 INSERT INTO orders
-                  (order_id, order_date, customer_name, customer_phone, customer_email,
-                   delivery_address, city, order_total, payment_method, order_data)
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                  (order_id, order_date, order_time, customer_name, customer_phone, customer_email,
+                   delivery_address, city, postal_code, order_total, payment_method,
+                   payment_details, order_status, delivery_instructions,
+                   preferred_delivery_date, estimated_delivery_date, created_at)
+                VALUES (%s,%s,NOW(),%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NOW())
+                ON CONFLICT (order_id) DO NOTHING
             """, (
                 order_id, order_date,
                 customer.get("full_name"), customer.get("phone"), customer.get("email"),
-                customer.get("address"), customer.get("city"),
+                customer.get("address"), customer.get("city"), customer.get("postal_code"),
                 order_total, payment.get("method", "COD"),
-                Json(full_record)
+                Json(payment), "pending",
+                full_record.get("delivery_instructions"),
+                full_record.get("preferred_delivery_date"),
+                full_record.get("estimated_delivery")
             ))
             for item in items:
                 cur.execute("""
@@ -186,6 +192,7 @@ class OrderService:
                 ))
             conn.commit()
             cur.close()
+            logger.info(f"Order {order_id} saved to PostgreSQL")
         except Exception as e:
             conn.rollback()
             logger.error(f"PostgreSQL save failed: {e}")
