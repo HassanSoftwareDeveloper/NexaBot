@@ -17,3 +17,4 @@ pymupdf
 openpyxl
 rapidfuzz
 groq
+psycopg2-binary
