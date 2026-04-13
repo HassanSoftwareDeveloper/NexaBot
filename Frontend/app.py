@@ -1,4 +1,4 @@
-﻿import streamlit as st
+import streamlit as st
 import requests
 import os
 from dotenv import load_dotenv
@@ -231,6 +231,8 @@ hr{border-color:var(--bdr)!important;margin:14px 0!important}
 .bub-user{background:var(--panel);color:var(--txt);padding:11px 16px;border-radius:16px 16px 4px 16px;max-width:60%;font-size:14px;line-height:1.6;border:1px solid var(--bdr2)}
 .bub-bot {background:var(--surf);color:var(--txt);padding:13px 18px;border-radius:4px 16px 16px 16px;max-width:72%;font-size:14px;line-height:1.75;border:1px solid var(--bdr);border-left:3px solid var(--gold)}
 .bub-bot b,.bub-bot strong{color:#fff;font-weight:600}
+.bub-bot code{background:rgba(201,168,76,.10)!important;color:var(--gold2)!important;border:1px solid rgba(201,168,76,.2)!important;border-radius:4px!important;padding:2px 7px!important;font-size:13px!important}
+.bub-bot pre{background:rgba(201,168,76,.06)!important;border:1px solid rgba(201,168,76,.15)!important;border-radius:6px!important;padding:10px 14px!important;color:var(--gold2)!important}
 .input-wrap{background:var(--surf);border:1px solid var(--bdr);border-radius:0 0 var(--rl) var(--rl);padding:14px 18px}
 .prod-card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);padding:16px 18px;margin-bottom:10px}
 .prod-cat{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
@@ -557,7 +559,7 @@ if st.session_state.active_tab == "chat":
             st.markdown(
                 f'<div class="msg-bot">'
                 f'<div class="msg-avatar">NX</div>'
-                f'<div class="bub-bot">{msg["content"]}</div>'
+                f'<div class="bub-bot">{msg["content"].replace(chr(10), "<br>")}</div>'
                 f'</div>',
                 unsafe_allow_html=True)
             prods = msg.get("products", [])
